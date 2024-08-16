@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+      .div::before {
+        content: '老鼠';
+      }
+      .div::after {
+        content: '大米';
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      .father {
+        width: 200px;
+        height: 100px;
+        background-color: gold;
+        padding-top: 20px;
+        /* overflow: hidden; */
+        box-sizing: border-box;
+        border-radius: 50px;
+        border-top: 20px;
+      }
+      .son {
+        width: 20px;
+        height: 20px;
+        background-color: pink;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">i</div>
+    <ul>
+      <li>13</li>
+      <li>12</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <div class="father">
+      <div class="son">son</div>
+    </div>
+  </body>
+</html>

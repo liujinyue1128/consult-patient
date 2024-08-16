@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <button id="btn">发送消息</button>
+    <button id="btn1">关闭连接</button>
+  </head>
+  <body>
+    <script>
+      const ws = new WebSocket('wss://javascript.info/article/websocket/demo/hello')
+      //   1. 开始建立连接
+      ws.onopen = () => {
+        console.log('建立连接成功')
+      }
+      //   2. 发送消息给服务器
+      document.querySelector('#btn').addEventListener('click', () => {
+        ws.send('你好，服务器，我是客户端')
+      })
+
+      //   3. 服务器自主关闭连接
+      document.querySelector('#btn1').addEventListener('click', () => {
+        ws.close()
+      })
+      //   4. 接受消息
+      ws.onmessage = (event) => {
+        console.log('接收到服务器发送的消息了', event)
+      }
+      // 5. 监听通信关闭
+      ws.onclose = () => {
+        console.log('连接关闭')
+      }
+    </script>
+  </body>
+</html>
